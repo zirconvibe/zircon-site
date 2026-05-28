@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Géza Bakos — CRM Admin & AI Systems</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050505;
+      overflow-x: hidden;
+    }
+
+    .noise::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 3px 3px;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.3;
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 40%),
+        #050505;
+    }
+
+    /* Kicsit dominánsabb, prémium glassmorphism hatás */
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 10px 30px -10px rgba(0,0,0,0.5);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .line {
+      width: 80px;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+  </style>
+</head>
+
+<body class="text-white noise">
+
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="#" class="text-sm tracking-[0.3em] uppercase font-semibold text-white/90">
+        GÉZA BAKOS
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10 text-sm text-white/60">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#work" class="hover:text-white transition">Work</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-20 left-10 w-96 h-96 rounded-full bg-white blur-[180px]"></div>
+      <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-white blur-[160px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+
+        <p class="uppercase tracking-[0.35em] text-white/40 text-xs mb-8 fade-up">
+          CRM Systems / AI Integration / Automation
+        </p>
+
+        <h1 class="fade-up text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight max-w-5xl">
+          CRM Admin.
+          <br>
+          AI Trainer.
+          <br>
+          Systems Built Cleanly.
+        </h1>
+
+        <p class="fade-up mt-10 text-white/55 text-lg md:text-xl max-w-2xl leading-relaxed">
+          Freelance CRM administration and AI automation focused on clean systems, integrated workflows and modern digital infrastructure.
+        </p>
+
+        <div class="fade-up mt-12 flex flex-col sm:flex-row gap-4">
+          <a href="#services"
+            class="px-8 py-4 bg-white text-black rounded-full text-sm font-medium hover:scale-[1.03] transition duration-300 inline-flex items-center justify-center">
+            View Services
+          </a>
+
+          <a href="https://www.linkedin.com/in/geza-bakos-44a755295/"
+            target="_blank"
+            class="px-8 py-4 border border-white/10 rounded-full text-sm text-white/80 hover:bg-white/5 transition inline-flex items-center justify-center">
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+      <div class="fade-up">
+        <div class="line mb-8"></div>
+        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">About</p>
+
+        <h2 class="text-4xl md:text-5xl font-semibold leading-tight mb-8">
+          Minimal structure.
+          <br>
+          Maximum presence.
+        </h2>
+      </div>
+
+      <div class="fade-up">
+        <p class="text-white/60 leading-8 text-lg">
+          I focus on CRM management, structured workflows and AI-assisted systems for businesses that prefer clarity over complexity. Minimal interface, efficient structure, modern execution.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="services" class="py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up mb-16">
+        <div class="line mb-8"></div>
+        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">Services</p>
+
+        <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
+          Focused on systems, automation and digital structure.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
+          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">01</p>
+          <h3 class="text-2xl font-semibold mb-4">CRM</h3>
+          <p class="text-white/55 leading-7">
+            CRM organization, workflow management and operational structure built to stay efficient over time.
+          </p>
+        </div>
+
+        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
+          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">02</p>
+          <h3 class="text-2xl font-semibold mb-4">AI Workflow Integration</h3>
+          <p class="text-white/55 leading-7">
+            Custom prompt architecture and structured AI training systems designed for enterprise consistency and scale.
+          </p>
+        </div>
+
+        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
+          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">03</p>
+          <h3 class="text-2xl font-semibold mb-4">Automation</h3>
+          <p class="text-white/55 leading-7">
+            Minimal, lightweight digital solutions without unnecessary complexity or bloated infrastructure.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="work" class="py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up mb-16">
+        <div class="line mb-8"></div>
+        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">Selected Work</p>
+
+        <h2 class="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl">
+          Minimal digital presence with restrained visual direction.
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+
+        <div class="relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-700"
+            alt="CRM Background"
+          >
+
+          <div class="absolute inset-0 bg-black/40"></div>
+
+          <div class="relative z-10 p-10 flex flex-col justify-end h-full">
+            <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-4">Systems</p>
+            <h3 class="text-3xl font-semibold mb-4">CRM Infrastructure</h3>
+            <p class="text-white/70 max-w-md leading-7">
+              Structured backend thinking with modern minimal presentation and efficient workflows.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-700"
+            alt="AI Background"
+          >
+
+          <div class="absolute inset-0 bg-black/45"></div>
+
+          <div class="relative z-10 p-10 flex flex-col justify-end h-full">
+            <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-4">AI</p>
+            <h3 class="text-3xl font-semibold mb-4">Custom Prompt Architecture</h3>
+            <p class="text-white/70 max-w-md leading-7">
+              Clean prompt engineering framework and scalable AI-assisted operational models.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="py-32 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+      <div class="fade-up">
+        <div class="line mx-auto mb-8"></div>
+
+        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">
+          Contact
+        </p>
+
+        <h2 class="text-4xl md:text-6xl font-semibold leading-tight mb-10">
+          Let's connect.
+        </h2>
+
+        <a href="https://www.linkedin.com/in/geza-bakos-44a755295/"
+          target="_blank"
+          class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-black font-medium hover:scale-[1.03] transition duration-300">
+          LinkedIn Profile
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/35">
+      <p>© 2026 Géza Bakos</p>
+      <p>CRM Admin • AI Integration Specialist • Freelance Systems</p>
+    </div>
+  </footer>
+
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    document.querySelectorAll('.fade-up').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
