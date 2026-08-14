@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Géza Bakos — CRM Admin & AI Systems</title>
+  <meta name="description" content="Géza Bakos — fogtechnikai portfólió. Gyakorlati munkák, munkafolyamatok és elméleti tanulmányok az elmúlt kb. két évből." />
+  <title>Géza Bakos — Fogtechnikai portfólió</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background: #050505;
       overflow-x: hidden;
     }
-
     .noise::before {
       content: "";
       position: fixed;
@@ -32,7 +28,6 @@
       z-index: 999;
       opacity: 0.3;
     }
-
     .hero-gradient {
       background:
         radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 35%),
@@ -40,7 +35,13 @@
         #050505;
     }
 
-    /* Kicsit dominánsabb, prémium glassmorphism hatás */
+    .hero-dental-tech {
+      mix-blend-mode: screen;
+      opacity: 0.92;
+      filter: contrast(1.06) brightness(1.02);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.45) 12%, #000 25%, #000 76%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.45) 12%, #000 25%, #000 76%, transparent 100%);
+    }
     .glass {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(14px);
@@ -48,258 +49,267 @@
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 10px 30px -10px rgba(0,0,0,0.5);
     }
-
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: all 1s ease;
+      transition: opacity .8s ease, transform .8s ease;
     }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .line { width: 80px; height: 1px; background: rgba(255,255,255,0.15); }
+    .work-card img { transition: transform .7s ease, opacity .5s ease; }
+    .work-card:hover img { transform: scale(1.035); }
+    .viewer-open { overflow: hidden; }
+    .viewer {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
     }
-
-    .line {
-      width: 80px;
-      height: 1px;
-      background: rgba(255,255,255,0.15);
+    .viewer.active { opacity: 1; pointer-events: auto; }
+    .viewer-image { max-height: calc(100vh - 150px); }
+    .viewer-btn {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+    .viewer-btn:active { transform: scale(.96); }
+    @media (max-width: 640px) {
+      .viewer-image { max-height: calc(100vh - 135px); }
     }
   </style>
 </head>
 
 <body class="text-white noise">
 
-  <header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="#" class="text-sm tracking-[0.3em] uppercase font-semibold text-white/90">
-        GÉZA BAKOS
-      </a>
+<header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="#" class="text-sm tracking-[0.3em] uppercase font-semibold text-white/90">GÉZA BAKOS</a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-white/60">
+      <a href="#folyamatok" class="hover:text-white transition">Munkafolyamatok</a>
+      <a href="#munkak" class="hover:text-white transition">Kész munkák</a>
+      <a href="#elmelet" class="hover:text-white transition">Elméleti munkák</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="hidden md:flex items-center gap-10 text-sm text-white/60">
-        <a href="#about" class="hover:text-white transition">About</a>
-        <a href="#services" class="hover:text-white transition">Services</a>
-        <a href="#work" class="hover:text-white transition">Work</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
-      </nav>
-    </div>
-  </header>
+<section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-20 left-10 w-96 h-96 rounded-full bg-white blur-[180px]"></div>
+    <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-white blur-[160px]"></div>
+  </div>
 
-
-  <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-20 left-10 w-96 h-96 rounded-full bg-white blur-[180px]"></div>
-      <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-white blur-[160px]"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="max-w-4xl">
-
-        <p class="uppercase tracking-[0.35em] text-white/40 text-xs mb-8 fade-up">
-          CRM Systems / AI Integration / Automation
-        </p>
-
-        <h1 class="fade-up text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight max-w-5xl">
-          CRM Admin.
-          <br>
-          AI Trainer.
-          <br>
-          Systems Built Cleanly.
+  <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-4 lg:gap-0">
+      <div class="relative z-20 max-w-5xl">
+        <p class="uppercase tracking-[0.35em] text-white/40 text-xs mb-8 fade-up">DESIGN / GYÁRTÁS / MUNKAFOLYAMATOK</p>
+        <h1 class="fade-up text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight">
+          Fogtechnikai<br>laboratóriumi tevékenységek.
         </h1>
-
-        <p class="fade-up mt-10 text-white/55 text-lg md:text-xl max-w-2xl leading-relaxed">
-          Freelance CRM administration and AI automation focused on clean systems, integrated workflows and modern digital infrastructure.
-        </p>
-
+        <div class="fade-up mt-10 max-w-3xl text-white/55 text-lg md:text-xl leading-relaxed space-y-5">
+          <p>
+            Válogatás a fogtechnikai tanulmányok és szakmai gyakorlat során végzett digitális és manuális laboratóriumi munkákból.
+          </p>
+          <p>
+            Orvosi segédeszközök, fogpótlások, próbamunkák és dokumentált részfolyamatok rövid bemutatása, a gyakorlati tapasztalatok és eredmények tükrében.
+          </p>
+        </div>
         <div class="fade-up mt-12 flex flex-col sm:flex-row gap-4">
-          <a href="#services"
-            class="px-8 py-4 bg-white text-black rounded-full text-sm font-medium hover:scale-[1.03] transition duration-300 inline-flex items-center justify-center">
-            View Services
-          </a>
-
-          <a href="https://www.linkedin.com/in/geza-bakos-44a755295/"
-            target="_blank"
-            class="px-8 py-4 border border-white/10 rounded-full text-sm text-white/80 hover:bg-white/5 transition inline-flex items-center justify-center">
-            LinkedIn
-          </a>
+          <a href="#folyamatok" class="px-8 py-4 bg-white text-black rounded-full text-sm font-medium hover:scale-[1.03] transition duration-300 inline-flex items-center justify-center">Munkák megtekintése</a>
+          <a href="#elmelet" class="px-8 py-4 border border-white/10 rounded-full text-sm text-white/80 hover:bg-white/5 transition inline-flex items-center justify-center">Elméleti anyagok</a>
         </div>
+      </div>
 
+      <div class="relative hidden lg:flex items-center justify-end -ml-10 -mr-20 z-10 pointer-events-none">
+        <img src="assets/images/hero-dental-tech.webp" alt="Absztrakt digitális fogtechnikai grafika" class="hero-dental-tech w-[760px] max-w-none h-auto object-contain" aria-hidden="true">
       </div>
     </div>
-  </section>
 
-
-  <section id="about" class="py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-
-      <div class="fade-up">
-        <div class="line mb-8"></div>
-        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">About</p>
-
-        <h2 class="text-4xl md:text-5xl font-semibold leading-tight mb-8">
-          Minimal structure.
-          <br>
-          Maximum presence.
-        </h2>
-      </div>
-
-      <div class="fade-up">
-        <p class="text-white/60 leading-8 text-lg">
-          I focus on CRM management, structured workflows and AI-assisted systems for businesses that prefer clarity over complexity. Minimal interface, efficient structure, modern execution.
-        </p>
-      </div>
-
+    <div class="lg:hidden absolute right-[-26%] top-[32%] w-[125%] opacity-[0.14] pointer-events-none z-0">
+      <img src="assets/images/hero-dental-tech.webp" alt="" class="w-full h-auto" aria-hidden="true">
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <section id="services" class="py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <div class="fade-up mb-16">
-        <div class="line mb-8"></div>
-        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">Services</p>
-
-        <h2 class="text-4xl md:text-5xl font-semibold leading-tight">
-          Focused on systems, automation and digital structure.
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
-          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">01</p>
-          <h3 class="text-2xl font-semibold mb-4">CRM</h3>
-          <p class="text-white/55 leading-7">
-            CRM organization, workflow management and operational structure built to stay efficient over time.
-          </p>
-        </div>
-
-        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
-          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">02</p>
-          <h3 class="text-2xl font-semibold mb-4">AI Workflow Integration</h3>
-          <p class="text-white/55 leading-7">
-            Custom prompt architecture and structured AI training systems designed for enterprise consistency and scale.
-          </p>
-        </div>
-
-        <div class="glass rounded-3xl p-8 fade-up hover:-translate-y-1 transition duration-500">
-          <p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-5">03</p>
-          <h3 class="text-2xl font-semibold mb-4">Automation</h3>
-          <p class="text-white/55 leading-7">
-            Minimal, lightweight digital solutions without unnecessary complexity or bloated infrastructure.
-          </p>
-        </div>
-
-      </div>
+<section id="folyamatok" class="py-28 md:py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="fade-up mb-14">
+      <div class="line mb-8"></div>
+      <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">01 / Munkafolyamatok</p>
+      <h2 class="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl">Digitális tervezés és laboratóriumi gyártás előkészítés.</h2>
     </div>
-  </section>
 
-
-  <section id="work" class="py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <div class="fade-up mb-16">
-        <div class="line mb-8"></div>
-        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">Selected Work</p>
-
-        <h2 class="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl">
-          Minimal digital presence with restrained visual direction.
-        </h2>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-6">
-
-        <div class="relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-700"
-            alt="CRM Background"
-          >
-
-          <div class="absolute inset-0 bg-black/40"></div>
-
-          <div class="relative z-10 p-10 flex flex-col justify-end h-full">
-            <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-4">Systems</p>
-            <h3 class="text-3xl font-semibold mb-4">CRM Infrastructure</h3>
-            <p class="text-white/70 max-w-md leading-7">
-              Structured backend thinking with modern minimal presentation and efficient workflows.
-            </p>
-          </div>
-        </div>
-
-        <div class="relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-700"
-            alt="AI Background"
-          >
-
-          <div class="absolute inset-0 bg-black/45"></div>
-
-          <div class="relative z-10 p-10 flex flex-col justify-end h-full">
-            <p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-4">AI</p>
-            <h3 class="text-3xl font-semibold mb-4">Custom Prompt Architecture</h3>
-            <p class="text-white/70 max-w-md leading-7">
-              Clean prompt engineering framework and scalable AI-assisted operational models.
-            </p>
-          </div>
-        </div>
-
-      </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="work-card relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+        <img src="assets/images/1000004578.webp" class="absolute inset-0 w-full h-full object-cover opacity-75" alt="Digitális fogtechnikai tervezés" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full"><p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">digitális munkafolyamat</p><h3 class="text-3xl font-semibold">korona marás előkészítés - nesting</h3><p class="text-white/65 mt-3 max-w-md">digitálisan tervezett pótlás pozíciónálása a tömbben</p></div>
+      </article>
+      <article class="work-card relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+        <img src="assets/images/1000004579.webp" class="absolute inset-0 w-full h-full object-cover opacity-75" alt="Digitális fogpótlás tervezése" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full"><p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">Digitális munkafolyamat</p><h3 class="text-3xl font-semibold">implantátumos híd nesting</h3><p class="text-white/65 mt-3 max-w-md">elhelyezés a tömbben virtuálisan, gazdaságos helykihasználással</p></div>
+      </article>
+      <article class="work-card relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+        <img src="assets/images/1000004893.webp" class="absolute inset-0 w-full h-full object-cover opacity-75" alt="3D nyomtatási folyamat" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full"><p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">Digitális munkafolyamat</p><h3 class="text-3xl font-semibold">CAD munkafolyamat</h3><p class="text-white/65 mt-3 max-w-md">Digitális tervezési és előkészítési részfolyamat.</p></div>
+      </article>
+      <article class="work-card relative rounded-[2rem] overflow-hidden min-h-[420px] fade-up group glass">
+        <img src="assets/images/1000005614.webp" class="absolute inset-0 w-full h-full object-cover opacity-75" alt="Laboratóriumi gépi feldolgozás" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full"><p class="text-white/50 uppercase tracking-[0.25em] text-xs mb-3">Digitális munkafolyamat</p><h3 class="text-3xl font-semibold">exocad - státusz meghatározás</h3><p class="text-white/65 mt-3 max-w-md">A páciens és orvosi adatok megadása státusz megjelöléssel a visszakövethető tervezés érdekében.</p></div>
+      </article>
     </div>
-  </section>
 
+  </div>
+</section>
 
-  <section id="contact" class="py-32 border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-
-      <div class="fade-up">
-        <div class="line mx-auto mb-8"></div>
-
-        <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">
-          Contact
-        </p>
-
-        <h2 class="text-4xl md:text-6xl font-semibold leading-tight mb-10">
-          Let's connect.
-        </h2>
-
-        <a href="https://www.linkedin.com/in/geza-bakos-44a755295/"
-          target="_blank"
-          class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-black font-medium hover:scale-[1.03] transition duration-300">
-          LinkedIn Profile
-        </a>
-      </div>
-
+<section id="munkak" class="py-28 md:py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="fade-up mb-14">
+      <div class="line mb-8"></div>
+      <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">02 / Kész munkák</p>
+      <h2 class="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl">Elkészült fogpótlások, 3D-modellek és orvosi kellékek.</h2>
     </div>
-  </section>
+    <div class="grid md:grid-cols-2 gap-6" id="finishedGrid"></div>
+  </div>
+</section>
 
-
-  <footer class="border-t border-white/5 py-10">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/35">
-      <p>© 2026 Géza Bakos</p>
-      <p>CRM Admin • AI Integration Specialist • Freelance Systems</p>
+<section id="elmelet" class="py-28 md:py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="fade-up mb-14">
+      <div class="line mb-8"></div>
+      <p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">03 / Elméleti munkák</p>
+      <h2 class="text-4xl md:text-5xl font-semibold leading-tight max-w-4xl">Rövid tanulmányi prezentációk fogtechnikai, anatómiai és alapvető digitális ismeretek témáiból.</h2>
+      <p class="text-white/55 text-lg max-w-2xl leading-8 mt-6">Az elméleti alapok a gyakorlati laboratóriumi munkafolyamatok fontos részei.</p>
     </div>
-  </footer>
 
+    <div class="grid md:grid-cols-3 gap-6">
+      <button class="glass rounded-3xl p-8 text-left fade-up hover:-translate-y-1 transition duration-500" onclick="openViewer(0)">
+        <div class="mb-8 text-white/65" aria-hidden="true">
+          <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h10.5A2.5 2.5 0 0 1 20 5.5V19a2 2 0 0 1-2 2H7a2.5 2.5 0 0 1-2.5-2.5v-13Z"/>
+            <path d="M7 3v15.5A2.5 2.5 0 0 0 9.5 21"/>
+            <path d="M8.5 7h8M8.5 10.5h8M8.5 14h5.5"/>
+          </svg>
+        </div><p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-4">01</p><h3 class="text-2xl font-semibold mb-4">Kivehető fogpótlások</h3><p class="text-white/55 leading-7">Teljes és részleges kivehető fogpótlások felépítése, elemei és laboratóriumi folyamatai.</p><span class="inline-block mt-7 text-sm text-white/70">Megnyitás →</span>
+      </button>
+      <button class="glass rounded-3xl p-8 text-left fade-up hover:-translate-y-1 transition duration-500" onclick="openViewer(1)">
+        <div class="mb-8 text-white/65" aria-hidden="true">
+          <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h10.5A2.5 2.5 0 0 1 20 5.5V19a2 2 0 0 1-2 2H7a2.5 2.5 0 0 1-2.5-2.5v-13Z"/>
+            <path d="M7 3v15.5A2.5 2.5 0 0 0 9.5 21"/>
+            <path d="M8.5 7h8M8.5 10.5h8M8.5 14h5.5"/>
+          </svg>
+        </div><p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-4">02</p><h3 class="text-2xl font-semibold mb-4">Digitalizáció és 3D</h3><p class="text-white/55 leading-7">Digitalizáció, térbeli leképezés, 3D feldolgozás és különböző fájlformátumok.</p><span class="inline-block mt-7 text-sm text-white/70">Megnyitás →</span>
+      </button>
+      <button class="glass rounded-3xl p-8 text-left fade-up hover:-translate-y-1 transition duration-500" onclick="openViewer(2)">
+        <div class="mb-8 text-white/65" aria-hidden="true">
+          <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h10.5A2.5 2.5 0 0 1 20 5.5V19a2 2 0 0 1-2 2H7a2.5 2.5 0 0 1-2.5-2.5v-13Z"/>
+            <path d="M7 3v15.5A2.5 2.5 0 0 0 9.5 21"/>
+            <path d="M8.5 7h8M8.5 10.5h8M8.5 14h5.5"/>
+          </svg>
+        </div><p class="text-sm uppercase tracking-[0.25em] text-white/40 mb-4">03</p><h3 class="text-2xl font-semibold mb-4">Fogmorfológia / alaktan</h3><p class="text-white/55 leading-7">Fogfelszínek, anatómiai megnevezések és a rágófelszín alapvető morfológiai elemei.</p><span class="inline-block mt-7 text-sm text-white/70">Megnyitás →</span>
+      </button>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
+<section class="py-24 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="fade-up mb-10"><div class="line mb-8"></div><p class="uppercase tracking-[0.3em] text-xs text-white/40 mb-6">04 / További részletek</p><h2 class="text-3xl md:text-4xl font-semibold">Egyéb dokumentált laboratóriumi pillanatok.</h2></div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3" id="archiveGrid"></div>
+  </div>
+</section>
 
-    document.querySelectorAll('.fade-up').forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
+<footer class="border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/35">
+    <p>© 2026 Géza Bakos</p><p>Fogtechnikai portfólió • design, gyártás és munkafolyamatok</p>
+  </div>
+</footer>
 
+<div id="viewer" class="viewer fixed inset-0 z-[1000] bg-black/95 backdrop-blur-xl flex flex-col">
+  <div class="flex items-center justify-between px-4 md:px-8 py-4 border-b border-white/10">
+    <div><p id="viewerTitle" class="text-sm font-medium"></p><p id="viewerCount" class="text-xs text-white/40 mt-1"></p></div>
+    <button onclick="closeViewer()" aria-label="Bezárás" class="viewer-btn rounded-full w-10 h-10 text-xl">×</button>
+  </div>
+  <div class="flex-1 min-h-0 flex items-center justify-center gap-2 md:gap-8 px-2 md:px-8 py-4">
+    <button onclick="prevSlide()" class="viewer-btn shrink-0 rounded-full w-11 h-11 md:w-14 md:h-14 text-xl" aria-label="Előző dia">←</button>
+    <div class="flex-1 min-w-0 h-full flex items-center justify-center"><img id="viewerImage" class="viewer-image max-w-full w-auto object-contain rounded-lg shadow-2xl" alt="Prezentáció dia"></div>
+    <button onclick="nextSlide()" class="viewer-btn shrink-0 rounded-full w-11 h-11 md:w-14 md:h-14 text-xl" aria-label="Következő dia">→</button>
+  </div>
+  <div class="text-center pb-4 text-xs text-white/30">Bal / jobb nyíl vagy mobilon lapozás • ESC bezárás</div>
+</div>
+
+<script>
+  const processImages = [];
+  const finishedImages = [
+    ['1000004146.webp','All on four implantátumos pótláshoz készült orvosi egyéni kanál'],
+    ['1000004365.webp','Kész alsó és felső cirkon híd pótlás árnyalatra festve és polírozva, nyomtatott modellen.'],
+    ['1000004450.webp','Páciensnek átadott maryland-híd pótlás cirkonból'],
+    ['1000004660.webp','Elkészült front híd és koronák A3-nyak, A1-él terület árnyalású labiális felszínnel'],
+    ['1000004661.webp','Egyéni árnyalatra, elszíneződött hatásúra festett 6 tagú cirkon híd.'],
+    ['1000004663.webp','5-tagú cirkon híd A2-körüli tónusra festve 3D-modellen.'],
+    ['1000004991 Copy.webp','Moláris fog korona cirkonból marva, anatómikusan kidolgozva és színhűre árnyalva, glazúrozva és polírozva.'],
+    ['1000005008.webp','Laboratóriumi fogszín ellenőrzés egy készülő kivehető felső fogsor készítése során.'],
+    ['20250131_145939.webp','Manuálisan készülő orvosi-egyéni kanál verzió, fényre szilárduló alapanyagból gipsz modellre.'],
+    ['20250131_161452.webp','Megszilárdult orvosi-egyéni kanál verzió, kidolgozás előtti állapotban modellen.'],
+    ['20250205_184409.webp','Kidolgozott implantátumos pótláshoz készült egyéni kanál sürgős munka.'],
+    ['1000004276.webp','EK-al vett szilikon lenyomat, mű-gingivával, analógok segítségével meghatározott pozícióval.']
+  ];
+  const archiveImages = [
+    ['1000004209.webp','labor analógok, titán felépítmények'],
+    ['1000004653.webp','3D print tartó pinek'],
+    ['1000004657.webp','tutaj beállítás'],
+    ['1000005186.webp','műtéti sablon nyomtatás előkészítés'],
+    ['20250127_075325.webp','guide-ok, 3D modellek'],
+    ['20250206_132934.webp','tengelyállások vázlat'],
+    ['20250206_133156.webp','overjet szemléltetés'],
+    ['IMG_0933.webp','3-tagú híd tervezés'],
+    ['IMG_0754.webp','fogpróba, artikulálva'],
+    ['MACRO_20250617_081922.webp','cirkon híd kiégetve'],
+    ['MACRO_20250626_174249.webp','elkészült akrilát fogsor'],
+    ['MACRO_20250628_122117.webp','fogpróba viaszban'],
+    ['MACRO_20251006_100544.webp','cirkon hidak, modellek'],
+    ['1000004374.webp','szóló korona tervezés, exocad'],
+    ['1000004476.webp','műtéti sablon tervezés exocad'],
+    ['20250110_140039.webp','CAM cirkon marás'],
+    ['20250110_140121.webp','Pi-Dental marógép kezelés'],
+    ['20250113_194301.webp','3D modell fénykezelés'],
+    ['1000004437.webp','maryland hidak gipsz modellen'],
+    ['1000004436.webp','cirkon híd festése modellen'],
+    ['1000004469.webp','CAM előkészítés, nesting']
+  ];
+
+  function imageCard(item, large=false) {
+    const [src, label] = item;
+    return `<button class="work-card relative overflow-hidden rounded-2xl ${large ? 'min-h-[420px]' : 'aspect-[4/3]'} glass group text-left fade-up" onclick="openImage('${src}','${label.replace(/'/g,"\\'")}')"><img src="assets/images/${src}" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100" alt="${label}" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div><div class="absolute inset-x-0 bottom-0 p-5"><p class="text-sm text-white/80">${label}</p></div></button>`;
+  }
+  document.getElementById('finishedGrid').innerHTML = finishedImages.map(x => imageCard(x, false)).join('');
+  document.getElementById('archiveGrid').innerHTML = archiveImages.map(x => imageCard(x)).join('');
+
+  const presentations = [
+    { title: 'Kivehető teljes és részleges fogpótlások', pages: Array.from({length:20},(_,i)=>`assets/slides/Removable_Complete_and_Partial_Dentures/page-${String(i+1).padStart(2,'0')}.webp`) },
+    { title: 'Digitalizáció, térbeli leképezések és fájltípusok', pages: Array.from({length:12},(_,i)=>`assets/slides/Digitalizáció_térbeli_leképezések_és_fájltípusok/page-${String(i+1).padStart(2,'0')}.webp`) },
+    { title: 'Fogmorfológia / alaktan', pages: Array.from({length:4},(_,i)=>`assets/slides/angol_prezi_-_tooth_morphology/page-${i+1}.webp`) }
+  ];
+  let viewerMode='slides', currentDeck=0, currentSlide=0;
+  const viewer=document.getElementById('viewer'), viewerImage=document.getElementById('viewerImage'), viewerTitle=document.getElementById('viewerTitle'), viewerCount=document.getElementById('viewerCount');
+  function showViewer(){ viewer.classList.add('active'); document.body.classList.add('viewer-open'); }
+  function openViewer(deck){ viewerMode='slides'; currentDeck=deck; currentSlide=0; updateViewer(); showViewer(); }
+  function openImage(src,title){ viewerMode='image'; currentSlide=0; viewerTitle.textContent=title; viewerCount.textContent=''; viewerImage.src='assets/images/'+src; showViewer(); }
+  function updateViewer(){ const d=presentations[currentDeck]; viewerTitle.textContent=d.title; viewerCount.textContent=`${currentSlide+1} / ${d.pages.length}`; viewerImage.src=d.pages[currentSlide]; }
+  function closeViewer(){ viewer.classList.remove('active'); document.body.classList.remove('viewer-open'); viewerImage.src=''; }
+  function nextSlide(){ if(viewerMode==='slides'){currentSlide=(currentSlide+1)%presentations[currentDeck].pages.length;updateViewer();} }
+  function prevSlide(){ if(viewerMode==='slides'){currentSlide=(currentSlide-1+presentations[currentDeck].pages.length)%presentations[currentDeck].pages.length;updateViewer();} }
+  document.addEventListener('keydown',e=>{ if(!viewer.classList.contains('active'))return; if(e.key==='Escape')closeViewer(); if(viewerMode==='slides'&&e.key==='ArrowRight')nextSlide(); if(viewerMode==='slides'&&e.key==='ArrowLeft')prevSlide(); });
+  let touchX=0;
+  viewerImage.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX},{passive:true});
+  viewerImage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(viewerMode==='slides'&&Math.abs(dx)>45){dx<0?nextSlide():prevSlide();}},{passive:true});
+  viewer.addEventListener('click',e=>{if(e.target===viewer)closeViewer();});
+
+  const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');}),{threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>
